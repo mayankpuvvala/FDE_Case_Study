@@ -1,0 +1,15 @@
+TV MEDIA SPEND FILE - VENDOR SPECIFICATION (v2.3)
+
+1. Overview
+Spend is reported by media-buying week. Each row is one week of gross TV spend in USD thousands.
+
+2. Fields
+week_commencing (date, YYYY-MM-DD): the Monday on which the buying week commences.
+spend_usd_k (decimal): gross spend booked against that week, before agency commission.
+
+3. Calendar
+Weeks always run Monday to Sunday and follow the broadcast calendar. Weeks are grouped into 4-4-5 week quarters for billing.
+Buying weeks do not align with calendar months; a week may straddle two months.
+
+4. Delivery
+The file is refreshed every Monday and contains all weeks to date. Late invoices may restate prior weeks.

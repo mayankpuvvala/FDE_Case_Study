@@ -1,0 +1,11 @@
+DIGITAL AND EMAIL SPEND FILES - SPECIFICATION (v1.4)
+
+1. Overview
+Each file contains one row per calendar month with total spend in USD thousands.
+
+2. Fields
+month (date, YYYY-MM-DD): first day of the calendar month the spend relates to.
+spend_usd_k (decimal): total platform spend for the whole month, invoiced monthly.
+
+3. Notes
+Daily delivery is not available. Spend within a month should be treated as total only; no weekly phasing is provided.

@@ -1,0 +1,11 @@
+BRAND SALES FILE - SPECIFICATION (v3.0)
+
+1. Overview
+Net sales in USD thousands, aggregated by calendar month from the first to the last day of the month.
+
+2. Fields
+month (date, YYYY-MM-DD): first day of the calendar month.
+sales_usd_k (decimal): net sales for the month after returns and rebates.
+
+3. Notes
+Months contain a different number of days (28 to 31); no day-count normalisation is applied to the values.

@@ -1,0 +1,13 @@
+.env
+.venv/
+__pycache__/
+.pytest_cache/
+testing.py
+# generated vendor files: recreate with run_pipeline.py (the spec texts are inputs and are kept)
+data/*.csv
+data/scenario_smooth/
+# outputs: submit only the three deliverables
+outputs/*
+!outputs/Solution_Document.docx
+!outputs/slides.pptx
+!outputs/report.html

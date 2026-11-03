@@ -1,0 +1,16 @@
+[project]
+name = "fde-case-study"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "anthropic>=2.4.0",
+    "matplotlib>=3.11.2",
+    "numpy>=2.5.4",
+    "openai>=3.42.1",
+    "pandas>=3.1.0",
+    "pytest>=9.2.0",
+    "python-docx>=1.2.0",
+    "python-dotenv>=1.2.4",
+    "python-pptx>=1.0.2",
+    "scipy>=1.18.1",
+]

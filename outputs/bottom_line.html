@@ -1,0 +1,43 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bottom Line</title><style>
+:root{--bg:#f4f8f5;--surface:#fff;--fg:#1F2A24;--mut:#5F6B64;--line:#DDE5E0;--g:#1B7F4B;--tint:#E8F3EC;--bad:#B42318;--warn:#9A6700}
+@media (prefers-color-scheme:dark){:root{--bg:#0e1612;--surface:#15201a;--fg:#e7efe9;--mut:#9fb0a5;--line:#26362d;--g:#3fb877;--tint:#183226;--bad:#ff7b72;--warn:#e3b341}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 Inter,system-ui,Segoe UI,Roboto,sans-serif}
+.wrap{max-width:860px;margin:0 auto;padding:32px 16px 48px}
+.eyebrow{text-transform:uppercase;letter-spacing:1.5px;font-size:12px;font-weight:700;color:var(--g)}
+h1{font-size:30px;line-height:1.2;margin:6px 0 18px;letter-spacing:-.4px}
+.verdict{background:var(--tint);border:1px solid var(--line);border-left:6px solid var(--bad);border-radius:12px;padding:18px 20px;margin-bottom:20px}
+.verdict b{font-size:20px;display:block;margin-bottom:6px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px;margin-bottom:16px;overflow-x:auto}
+h2{font-size:18px;margin:0 0 10px}
+table{border-collapse:collapse;width:100%;font-size:14.5px}th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line)}
+th{color:var(--mut);font-size:12px;text-transform:uppercase;letter-spacing:.5px}td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+.neg{color:var(--bad);font-weight:700}.pos{color:var(--g);font-weight:700}.mut{color:var(--mut);font-size:13.5px}
+ul{margin:6px 0 0 18px;padding:0}li{margin:4px 0}
+</style></head><body><div class="wrap">
+<div class="eyebrow">The Two Calendars · bottom line</div>
+<h1>Should we move 15% of TV spend to digital + email?</h1>
+<div class="verdict"><b>No. The data do not support the shift.</b>
+The naive (week &rarr; month of its Monday) calendar shows a small gain, but it is an artefact of the calendar error. With the corrected day-level calendar there is no gain in any scenario, and the true effect was negative in every simulated world.</div>
+
+<div class="card"><h2>Naive vs corrected: sales impact of the 15% shift</h2>
+<table><tr><th>Scenario</th><th class="n">Naive</th><th class="n">Corrected</th><th class="n">Truth</th></tr>
+<tr><td>Steady TV</td><td class="n pos">+0.52%<br><span class="mut">[-0.4%, +1.4%] &middot; 80% chance it helps</span></td><td class="n neg">-0.12%<br><span class="mut">[-1.3%, +1.0%] &middot; 43% chance it helps</span></td><td class="n neg">-0.62%</td></tr>
+<tr><td>Heavily pulsed TV</td><td class="n neg">-0.68%<br><span class="mut">[-1.5%, +0.0%] &middot; 6%</span></td><td class="n neg">-0.82%<br><span class="mut">[-1.5%, -0.1%] &middot; 3%</span></td><td class="n neg">-0.53%</td></tr></table>
+<p class="mut">90% bootstrap intervals. Synthetic data with a designed answer key; these validate the method, not the real brand's numbers.</p></div>
+
+<div class="card"><h2>If there is a gain, how much?</h2>
+<ul>
+<li><b>Naive calendar, steady TV:</b> +0.52% of sales (upper bound +1.4%). This is the only place a gain appears, and it is not real.</li>
+<li><b>Corrected calendar:</b> no gain. Best estimate is -0.12% (steady TV) and -0.82% (pulsed TV).</li>
+<li><b>Truth:</b> -0.62% and -0.53%. Moving the spend costs roughly half a percent of sales.</li>
+<li><b>False-positive rate:</b> the naive calendar showed a confident gain in 33% of 12 steady-TV worlds; the corrected one in 0%.</li>
+</ul></div>
+
+<div class="card"><h2>Caveats</h2>
+<ul>
+<li>With steady TV the corrected result is statistically indistinguishable from zero: the honest answer there is "cannot tell", not "the shift is bad".</li>
+<li>Only 48 monthly points; intervals are optimistic (the 90% interval caught the true TV share only 25% of the time in the pulsed case).</li>
+<li>Details: <a href="report.html">full report</a>.</li>
+</ul></div>
+</div></body></html>
